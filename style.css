@@ -1,0 +1,49 @@
+
+    
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Hover Underline Animation 
+           Creates a line that grows from left to right on hover
+        */
+        .nav-link {
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: currentColor; /* Matches text color */
+            transition: width 0.3s ease-out;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu Transition 
+           Slide down effect
+        */
+        #mobile-menu {
+            transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        #mobile-menu.open {
+            max-height: 400px; /* Arbitrary height large enough for menu */
+            opacity: 1;
+        }
+    
